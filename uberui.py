@@ -94,7 +94,6 @@ def output_msg(msg, o):  # output_msg
     msg1 = pygame.font.render(msg)
     screen.blit(msg1, (x, y))
 
-
 def read_audio():
     RATE = 44100
     CHUNK = 1024
