@@ -7,7 +7,7 @@ import sys
 import pyaudio,wave
 from tqdm import tqdm
 
-import of as of
+import of1 as of
 from playsound import playsound
 class Screen:
     @staticmethod
