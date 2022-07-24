@@ -85,7 +85,7 @@ class Th(QThread):
         x = 0
         y = 0
         label = MainWindow.ui.Result
-        if str(o) in ("13568"):
+        if str(o) in ("1235689"):
             label.setStyleSheet('''background: rgba(255, 0, 0, 1); 
                        font-family: YouYuan;
                        font-size: 24pt;
