@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from PySide6.QtCore import QThread, Slot, Signal
 from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtUiTools import QUiLoader
@@ -89,7 +91,7 @@ class Th(QThread):
                        font-size: 24pt;
                        color: white;
                        ''')
-            label.setText(f"{msg}")
+            label.setText(f"{msg}\n-{datetime.now()}")
         else:
             label.setStyleSheet('''background: rgba(255, 255, 255, 0.2); 
                        font-family: YouYuan;
