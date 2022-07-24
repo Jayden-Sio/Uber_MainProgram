@@ -1,0 +1,15 @@
+2022-07-24 16:48:36 - root - DEBUG     - DemoUI.py : 20 line - MainWindow initialized
+2022-07-24 16:48:57 - root - DEBUG     - DemoUI.py : 24 line - Start recording
+2022-07-24 16:48:59 - h5py._conv - DEBUG     - attrs.py : 77 line - Creating converter from 3 to 5
+2022-07-24 16:49:00 - root - INFO      - DemoUI.py : 50 line - Output: air_conditioner
+2022-07-24 16:49:03 - root - INFO      - DemoUI.py : 50 line - Output: air_conditioner
+2022-07-24 16:49:05 - root - INFO      - DemoUI.py : 50 line - Output: children_playing
+2022-07-24 16:49:07 - root - INFO      - DemoUI.py : 50 line - Output: dog_bark
+2022-07-24 16:49:10 - tensorflow - WARNING   - def_function.py : 148 line - 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000011928906E60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2022-07-24 16:49:10 - root - INFO      - DemoUI.py : 50 line - Output: children_playing
+2022-07-24 16:49:12 - tensorflow - WARNING   - def_function.py : 148 line - 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001192B3043A0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2022-07-24 16:49:12 - root - INFO      - DemoUI.py : 50 line - Output: dog_bark
+2022-07-24 16:49:14 - root - INFO      - DemoUI.py : 50 line - Output: dog_bark
+2022-07-24 16:49:17 - root - INFO      - DemoUI.py : 50 line - Output: air_conditioner
+2022-07-24 16:49:19 - root - INFO      - DemoUI.py : 50 line - Output: air_conditioner
+2022-07-24 16:49:21 - root - DEBUG     - DemoUI.py : 30 line - End recording
