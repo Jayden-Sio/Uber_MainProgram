@@ -4,11 +4,13 @@ import time
 import pygame
 import sys
 
-import pyaudio,wave
+import pyaudio, wave
 from tqdm import tqdm
 
 import of1 as of
 from playsound import playsound
+
+
 class Screen:
     @staticmethod
     def center():
@@ -25,6 +27,7 @@ class Screen:
     def idle(self):
         self.delta = self.clock.tick(self.fps)
 
+
 class Pen:
     def __init__(self, font, color):
         self.font = font
@@ -34,6 +37,7 @@ class Pen:
         image = self.font.render(text, 1, self.color)
         rect = image.get_rect(**{anchor: position})
         surface.blit(image, rect)
+
 
 class OvalButton:
     def __init__(self, color, size, text, pen, position, anchor):
@@ -47,6 +51,7 @@ class OvalButton:
 
     def draw(self, surface):
         surface.blit(self.image, self.rect)
+
 
 class HoverAlphaEvent:
     def __init__(self, normal, hover, callback, user_data=None):
@@ -74,22 +79,26 @@ class HoverAlphaEvent:
             pos = event.pos[0] - self.hover.rect.x, event.pos[1] - self.hover.rect.y
             if self.hover.image.get_at(pos).a:
                 self.callback(self.user_data)
-def buzz(): #buzzing
+
+
+def buzz():  # buzzing
     playsound("beep.wav")
-def output_msg(msg,o):  #output_msg
-    x=0
-    y=0
+
+
+def output_msg(msg, o):  # output_msg
+    x = 0
+    y = 0
     if str(o) in ("13568"):
         buzz()
     # font=pygame.font.Font()
-    msg1=pygame.font.render(msg)
-    screen.blit(msg1,(x,y))
+    msg1 = pygame.font.render(msg)
+    screen.blit(msg1, (x, y))
 
 
 def read_audio():
     RATE = 44100
     CHUNK = 1024
-    RECORD_SECONDS = 5
+    RECORD_SECONDS = 2
 
     # 实例化一个PyAudio对象
     pa = pyaudio.PyAudio()
@@ -103,9 +112,9 @@ def read_audio():
         record_buf.append(audio_data)  # 将读出的音频数据追加到record_buf列表
         count += 1
         print('*')
-    wf = wave.open('quake_sounds/test/audio-0-0.wav', 'wb')          # 创建一个音频文件，名字为“01.wav"
-    wf.setnchannels(1)                      # 设置声道数为1
-    wf.setsampwidth(2)                      # 设置采样深度为2
+    wf = wave.open('quake_sounds/test/audio-0-0.wav', 'wb')  # 创建一个音频文件，名字为“01.wav"
+    wf.setnchannels(1)  # 设置声道数为1
+    wf.setsampwidth(2)  # 设置采样深度为2
     wf.setframerate(RATE)
     # 将数据写入创建的音频文件
     wf.writeframes("".encode().join(record_buf))
@@ -118,13 +127,15 @@ def read_audio():
     time.sleep(2)
 
 
-def button_push(user_data):     #changing the output_file into output functionx
-    classes=["air_conditioner","car_horn","children_playing","dog_bark","drilling","engine_idling","gun_shot","jackhammer","siren","street_music"]
+def button_push(user_data):  # changing the output_file into output functionx
+    classes = ["air_conditioner", "car_horn", "children_playing", "dog_bark", "drilling", "engine_idling", "gun_shot",
+               "jackhammer", "siren", "street_music"]
     read_audio()
-    o=of.output()
+    o = of.output()
     print(o)
-    msg=classes[o]
-    output_msg(msg,o)
+    msg = classes[o]
+    output_msg(msg, o)
+
 
 def main():
     pygame.init()
@@ -137,7 +148,7 @@ def main():
         HoverAlphaEvent(
             OvalButton(pygame.Color("firebrick"), (350, 350), "Button", pen, (20, 20), "topleft"),
             OvalButton(pygame.Color("lawngreen"), (350, 350), "Button", pen, (20, 20), "topleft"),
-            button_push, "Button"),]
+            button_push, "Button"), ]
 
     running = True
     while running:
@@ -161,6 +172,7 @@ def main():
 
         pygame.display.update()
         screen.idle()
+
 
 if __name__ == "__main__":
     main()
