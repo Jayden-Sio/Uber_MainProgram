@@ -90,14 +90,14 @@ def output_msg(msg, o):  # output_msg
     y = 0
     if str(o) in ("13568"):
         buzz()
-    # font=pygame.font.Font()
-    msg1 = pygame.font.render(msg)
-    screen.blit(msg1, (x, y))
+    game_font = pygame.font.Font(None, 20)
+    msg1=game_font.render(msg,True, (255,255,255))
+    screen.surface.blit(msg1, (x, y))
 
 def read_audio():
     RATE = 44100
     CHUNK = 1024
-    RECORD_SECONDS = 2
+    RECORD_SECONDS = 1
 
     # 实例化一个PyAudio对象
     pa = pyaudio.PyAudio()
@@ -136,9 +136,7 @@ def button_push(user_data):  # changing the output_file into output functionx
 
 
 def main():
-    pygame.init()
-    Screen.center()
-    screen = Screen("Mouse Double Click", 800, 600)
+
     background = pygame.Color("black")
 
     pen = Pen(pygame.font.Font(None, 32), pygame.Color("white"))
@@ -173,4 +171,7 @@ def main():
 
 
 if __name__ == "__main__":
+    pygame.init()
+    Screen.center()
+    screen = Screen("Mouse Double Click", 800, 600)
     main()
