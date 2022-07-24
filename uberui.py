@@ -7,7 +7,7 @@ import sys
 import pyaudio, wave
 from tqdm import tqdm
 
-import of1 as of
+import of2 as of
 from playsound import playsound
 
 
@@ -124,7 +124,6 @@ def read_audio():
     stream.stop_stream()
     # 关闭声卡
     stream.close()
-    time.sleep(2)
 
 
 def button_push(user_data):  # changing the output_file into output functionx
