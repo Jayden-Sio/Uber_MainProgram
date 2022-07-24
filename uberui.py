@@ -104,9 +104,9 @@ def read_audio():
         count += 1
         print('*')
     wf = wave.open('quake_sounds/test/audio-0-0.wav', 'wb')          # 创建一个音频文件，名字为“01.wav"
-    wf.setnchannels(1)                      # 设置声道数为2
-    wf.setsampwidth(2)                      # 设置采样深度为
-    wf.setframerate(RATE)                  # 设置采样率为16000
+    wf.setnchannels(1)                      # 设置声道数为1
+    wf.setsampwidth(2)                      # 设置采样深度为2
+    wf.setframerate(RATE)
     # 将数据写入创建的音频文件
     wf.writeframes("".encode().join(record_buf))
     # 写完后将文件关闭
